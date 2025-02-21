@@ -1,3 +1,4 @@
+import Bank.BankAccount;
 import Car.Car;
 import Student.Student;
 
@@ -41,5 +42,18 @@ public class Main {
         }
 
         System.out.println("Best student: " + students[bestIdx].getName() + " with grade: " + students[bestIdx].getGrade());
+
+        //Bank
+        BankAccount owner1 = new BankAccount("Tina", 1000);
+        BankAccount owner2 = new BankAccount("Vicky", 500);
+
+        owner2.deposit(50);
+
+        owner1.withdraw(400);
+
+        owner1.transfer(owner2, 20);
+
+        owner1.printInfo();
+        owner2.printInfo();
     }
 }
