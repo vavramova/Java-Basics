@@ -1,7 +1,10 @@
 import Bank.BankAccount;
 import Car.Car;
+import Library.Library;
 import Student.Student;
 import Student.StudentAdv;
+import Library.Book;
+
 
 import java.util.ArrayList;
 
@@ -79,5 +82,26 @@ public class Main {
             student.printInfo();
         }
 
+
+        System.out.println("-------------------------------------");
+        //Library
+
+        Library lib = new Library();
+
+        Book book1 = new Book("1948", "Georg Oruel");
+        Book book2 = new Book("Harry Potter", "J.K.Rolling");
+
+        lib.addBook(book1);
+        lib.addBook(book2);
+
+        lib.listOfAvailableBooks();
+
+        lib.borrowBook("1948");
+
+        lib.listOfAvailableBooks();
+
+        lib.returnBook("1948");
+
+        lib.listOfAvailableBooks();
     }
 }
