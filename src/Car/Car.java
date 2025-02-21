@@ -6,9 +6,9 @@ public class Car {
     /**
      * The attributes of the car are brand, current speed and maximum speed
      */
-    private String brand;
+    private final String brand;
     private int speed;
-    private int maxSpeed;
+    private final int maxSpeed;
 
     /**
      * Constructor that creates new Object Car with current speed 0
@@ -23,7 +23,7 @@ public class Car {
 
     /**
      * A method that increases the speed of the car
-     * @param amount
+     * @param amount describes with how much the car should accelerate
      */
     public void accelerate(int amount){
         if((speed + amount) >= maxSpeed){
@@ -35,7 +35,7 @@ public class Car {
 
     /**
      * A method that decreases the speed of the car
-     * @param amount
+     * @param amount describes with how much the car should brake
      */
     public void brake(int amount){
         if((speed - amount) <= 0){
