@@ -1,6 +1,10 @@
 import Bank.BankAccount;
 import Car.Car;
 import Student.Student;
+import Student.StudentAdv;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -18,7 +22,7 @@ public class Main {
         myNewCar.brake(310);
         myNewCar.printStatus();
 
-
+        System.out.println("-------------------------------------");
         //testing Student
         Student[] students = {
                 new Student("Bob"),
@@ -43,6 +47,7 @@ public class Main {
 
         System.out.println("Best student: " + students[bestIdx].getName() + " with grade: " + students[bestIdx].getGrade());
 
+        System.out.println("-------------------------------------");
         //Bank
         BankAccount owner1 = new BankAccount("Tina", 1000);
         BankAccount owner2 = new BankAccount("Vicky", 500);
@@ -55,5 +60,24 @@ public class Main {
 
         owner1.printInfo();
         owner2.printInfo();
+
+
+        System.out.println("-------------------------------------");
+        //StudentAdv
+        ArrayList<StudentAdv> studs = new ArrayList<>();
+
+        studs.add(new StudentAdv("Vicky", 20));
+        studs.add(new StudentAdv("Tina", 19));
+        studs.add(new StudentAdv("Maria", 17));
+        studs.add(new StudentAdv("Anna", 18));
+        studs.add(new StudentAdv("Irina", 16));
+
+        ArrayList<StudentAdv> filtered = StudentAdv.filter(studs);
+
+        System.out.println("Filtered students: ");
+        for(StudentAdv student : filtered){
+            student.printInfo();
+        }
+
     }
 }
