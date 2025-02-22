@@ -7,12 +7,16 @@ import Interfaces_and_abstract_classes.Circle;
 import Interfaces_and_abstract_classes.Rectangle;
 import Interfaces_and_abstract_classes.Shape;
 import Library.Library;
+import Polymorphism.Guitar;
+import Polymorphism.Piano;
+import Polymorphism.Playable;
 import Student.Student;
 import Student.StudentAdv;
 import Library.Book;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -142,5 +146,16 @@ public class Main {
         System.out.println("Popped item: " + stack.pop());
         System.out.println("Stack size after pop: " + stack.size());
 
+
+
+        System.out.println("-------------------------------------");
+        //Polymorphism
+        List<Playable> band = new ArrayList<>();
+        band.add(new Guitar("Fender Stratocaster"));
+        band.add(new Piano("Yamaha Grand"));
+
+        for (Playable instrument : band) {
+            instrument.play();
+        }
     }
 }
