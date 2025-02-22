@@ -1,5 +1,8 @@
 import Bank.BankAccount;
 import Car.Car;
+import Interfaces_and_abstract_classes.Circle;
+import Interfaces_and_abstract_classes.Rectangle;
+import Interfaces_and_abstract_classes.Shape;
 import Library.Library;
 import Student.Student;
 import Student.StudentAdv;
@@ -103,5 +106,18 @@ public class Main {
         lib.returnBook("1948");
 
         lib.listOfAvailableBooks();
+
+
+
+        System.out.println("-------------------------------------");
+        //Interfaces and Abstract classes
+        Shape rectangle = new Rectangle<>(5.0, 10.0, "Red");
+        Shape circle = new Circle<>(7.0, "Blue");
+
+        System.out.println("Rectangle area: " + rectangle.getArea());
+        System.out.println("Rectangle perimeter: " + rectangle.getPerimeter());
+
+        System.out.println("Circle area: " + circle.getArea());
+        System.out.println("Circle perimeter: " + circle.getPerimeter());
     }
 }
