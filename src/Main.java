@@ -1,5 +1,8 @@
 import Bank.BankAccount;
 import Car.Car;
+import Classes_and_Generics.Box;
+import Classes_and_Generics.Container;
+import Classes_and_Generics.StackContainer;
 import Interfaces_and_abstract_classes.Circle;
 import Interfaces_and_abstract_classes.Rectangle;
 import Interfaces_and_abstract_classes.Shape;
@@ -119,5 +122,25 @@ public class Main {
 
         System.out.println("Circle area: " + circle.getArea());
         System.out.println("Circle perimeter: " + circle.getPerimeter());
+
+
+        System.out.println("-------------------------------------");
+        //Classes and Generics
+        Container<String> box = new Box<>();
+        box.addItem("Apple");
+        box.addItem("Banana");
+
+        System.out.println("Box size: " + box.size());
+        System.out.println("First item in box: " + box.getItem(0));
+
+        StackContainer<Integer> stack = new StackContainer<>();
+        stack.addItem(10);
+        stack.addItem(20);
+        stack.addItem(30);
+
+        System.out.println("Stack size before pop: " + stack.size());
+        System.out.println("Popped item: " + stack.pop());
+        System.out.println("Stack size after pop: " + stack.size());
+
     }
 }
