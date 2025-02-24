@@ -1,5 +1,6 @@
 import Bank.BankAccount;
 import Car.Car;
+import ChainedExcp.App;
 import Classes_and_Generics.Box;
 import Classes_and_Generics.Container;
 import Classes_and_Generics.StackContainer;
@@ -185,5 +186,16 @@ public class Main {
             System.out.println("Error: " + iae.getMessage());
         }
 
+
+
+        System.out.println("-------------------------------------");
+        //ChainedExcp
+        App app = new App();
+
+        try{
+            app.startApp();
+        }catch(RuntimeException re){
+            System.out.println("Root cause: " + re.getCause().getMessage());
+        }
     }
 }
