@@ -7,6 +7,9 @@ import Interfaces_and_abstract_classes.Circle;
 import Interfaces_and_abstract_classes.Rectangle;
 import Interfaces_and_abstract_classes.Shape;
 import Library.Library;
+import PersExceptions.BankAcc_Exceptions;
+import PersExceptions.InvalidAgeException;
+import PersExceptions.NegativeBalanceException;
 import Polymorphism.Guitar;
 import Polymorphism.Piano;
 import Polymorphism.Playable;
@@ -157,5 +160,16 @@ public class Main {
         for (Playable instrument : band) {
             instrument.play();
         }
+
+        System.out.println("-------------------------------------");
+        //PersExceptions
+        BankAcc_Exceptions acc = new BankAcc_Exceptions(100);
+
+        try{
+           acc.withdraw(150);
+        }catch (NegativeBalanceException nbe){
+            System.out.println("Error: " + nbe.getMessage());
+        }
+
     }
 }
