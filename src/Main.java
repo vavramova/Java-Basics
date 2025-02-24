@@ -10,6 +10,7 @@ import Library.Library;
 import PersExceptions.BankAcc_Exceptions;
 import PersExceptions.InvalidAgeException;
 import PersExceptions.NegativeBalanceException;
+import PersExceptions.UserRegistration;
 import Polymorphism.Guitar;
 import Polymorphism.Piano;
 import Polymorphism.Playable;
@@ -169,6 +170,19 @@ public class Main {
            acc.withdraw(150);
         }catch (NegativeBalanceException nbe){
             System.out.println("Error: " + nbe.getMessage());
+        }
+
+        UserRegistration userReg = new UserRegistration();
+        try{
+            userReg.registerUser("Vicky" , 16);
+        }catch (InvalidAgeException iae){
+            System.out.println("Error: " + iae.getMessage());
+        }
+
+        try{
+            userReg.registerUser("Bob", 20);
+        }catch (InvalidAgeException iae){
+            System.out.println("Error: " + iae.getMessage());
         }
 
     }
